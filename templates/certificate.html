@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Participação UFJ</title>
+    <!-- Configuração de fontes e cores para o tema Claro (CSS Puro) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap');
+
+        /* Estilos Globais e Fundo */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            /* Fundo cinza claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        /* Container Principal do Certificado */
+        .certificate-container {
+            width: 100%;
+            max-width: 100%;
+            /* Simula A4 paisagem */
+            min-height: 100vh;
+            /* Simula A4 paisagem */
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            /* Fundo branco do certificado */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: #1f2937;
+            /* Cor do texto escuro */
+            position: relative;
+            border: 15px solid transparent;
+            border-image: linear-gradient(45deg, #1d4ed8, #2563eb, #1e40af) 1;
+            /* Borda em gradiente de azul royal */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Estilos do Cabeçalho */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1f2937;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        header hr {
+            border: none;
+            border-top: 3px solid #3b82f6;
+            /* Azul de destaque */
+            width: 60%;
+            margin: 15px auto 0;
+        }
+
+        /* Estilos da Área Principal (Corpo) */
+        main {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main h2 {
+            /* Tamanho reduzido de 80px para 64px */
+            font-size: 48px;
+            font-weight: 900;
+            color: #1e40af;
+            /* Azul principal mais escuro */
+            margin-bottom: 10px;
+        }
+
+        main .subtitle {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 40px;
+        }
+
+        /* Texto do Certificado */
+        .content-text {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #1f2937;
+        }
+
+        .participant-name {
+            font-family: 'Playfair Display', serif;
+            /* Tamanho reduzido de 48px para 42px */
+            font-size: 32px;
+            font-weight: 700;
+            color: #0c4a6e;
+            /* Azul do nome */
+            padding: 8px 20px;
+            margin: 10px auto;
+            display: inline-block;
+            background-color: #e0f2fe;
+            /* Fundo discreto para o nome */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: #1d4ed8;
+            margin: 20px 0;
+        }
+
+        .guest-highlight {
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        .date-info {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        /* Estilos do Rodapé (Assinaturas) */
+        footer {
+            margin-top: 60px;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .signature-block {
+            width: 40%;
+            margin: 0 20px;
+        }
+
+        .signature-line {
+            height: 1px;
+            background-color: #4b5563;
+            /* Linha de assinatura cinza escuro */
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .signature-block p {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .signature-block small {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* Media Queries para Responsividade e Impressão */
+        @media (max-width: 768px) {
+            .certificate-container {
+                padding: 40px;
+                min-height: auto;
+            }
+
+            main h2 {
+                font-size: 50px;
+            }
+
+            .participant-name {
+                font-size: 30px;
+            }
+
+            .content-text {
+                font-size: 20px;
+            }
+
+            .signatures {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .signature-block {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .certificate-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 40px;
+                border: 15px solid #1d4ed8 !important;
+                /* Borda Azul na impressão */
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            /* Garantindo que as cores escuras sejam impressas corretamente */
+            * {
+                color: #000 !important;
+                background-color: transparent !important;
+            }
+
+            .participant-name {
+                color: #1e40af !important;
+                border: 1px dashed #333;
+                text-transform: uppercase;
+            }
+
+            .event-title,
+            main h2 {
+                color: #1e40af !important;
+            }
+
+            .signature-line {
+                background-color: #000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="certificate-container">
+        <!-- Cabeçalho -->
+        <header>
+            <!-- Logo da UFJ -->
+            <img src="./assets/ufj-logo.png" alt="Logo da Universidade Federal de Jataí (UFJ)" class="logo">
+
+            <h1 class="title-font">
+                UNIVERSIDADE FEDERAL DE JATAÍ
+            </h1>
+            <hr>
+        </header>
+
+        <!-- Título Principal e Corpo do Texto -->
+        <main>
+            <h2 class="title-font">
+                CERTIFICADO DE PARTICIPAÇÃO
+            </h2>
+
+            <!-- Corpo do Certificado -->
+            <div class="content-text">
+                <p style="margin-bottom: 20px;">Certificamos que</p>
+
+                <p class="participant-name">
+                    {{participant.name}}
+                </p>
+
+                <p style="margin-top: 30px; margin-bottom: 10px;">Participou do webinário</p>
+
+                <p class="event-title">
+                    "Planejamento de Carreira em TI"
+                </p>
+
+                <p style="font-size: 20px;">
+                    com o convidado <span class="guest-highlight">Marcos Matos</span>,
+                    totalizando uma carga horária de <span style="font-weight: bold;">1 (uma) hora</span>.
+                </p>
+                <p class="date-info">
+                    Realizado em 26 de Novembro de 2025 às 17h.
+                </p>
+            </div>
+        </main>
+
+        <!-- Rodapé e Assinaturas -->
+        <footer>
+            <div class="signatures">
+                <!-- Assinatura Coordenador -->
+                <div class="signature-block">
+                    <div class="signature-line"></div>
+                    <p>Flavio Ferreira Borges</p>
+                    <small>Coordenador do Curso de Ciência da Computação</small>
+                </div>
+
+                <!-- Assinatura Convidado -->
+                <div class="signature-block">
+                    <div class="signature-line"></div>
+                    <p>Marcos Matos</p>
+                    <small>Convidado e Desenvolvedor Backend</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

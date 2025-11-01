@@ -1,0 +1,4 @@
+.env
+/pdfs/
+/node_modules/
+data.csv

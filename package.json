@@ -1,0 +1,19 @@
+{
+  "name": "jsautomail",
+  "version": "1.0.0",
+  "description": "Automação para envio automático de certificados por e-mail para os participantes do webinar",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "theprogmatheus",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "nodemailer": "^7.0.10",
+    "puppeteer": "^24.27.0",
+    "puppeteer-html-pdf": "^4.0.8"
+  }
+}
