@@ -137,11 +137,11 @@ async function main() {
 
     console.log("🧩 Carregando módulos e preparando ambiente...\n");
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
     const page = await browser.newPage();
 
     async function gerarPDF(templateName, participant) {
-        console.log(`Gerando certificado para: ${participant.name}`);
+        console.log(`📄 Gerando certificado para: ${participant.name}`);
 
         const filePath = path.resolve(`./templates/${templateName}`);
         await page.goto(`file://${filePath}`, { waitUntil: 'networkidle0' });
