@@ -141,7 +141,7 @@ async function main() {
     const page = await browser.newPage();
 
     async function gerarPDF(templateName, participant) {
-        console.log(`📄 Gerando certificado para: ${participant.name}`);
+        console.log(`Gerando certificado para: ${participant.name}`);
 
         const filePath = path.resolve(`./templates/${templateName}`);
         await page.goto(`file://${filePath}`, { waitUntil: 'networkidle0' });
