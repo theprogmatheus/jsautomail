@@ -158,7 +158,7 @@ async function main() {
             landscape: true,
             printBackground: true,
             preferCSSPageSize: true,
-            scale: 0.8,
+            scale: 0.7,
         });
 
         console.log(`✅ Certificado salvo em: ${pdfPath}\n`);
